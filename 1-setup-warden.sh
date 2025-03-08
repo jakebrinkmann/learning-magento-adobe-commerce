@@ -24,10 +24,10 @@ KEY_FILE="$HOME/.warden/ssl/certs/warden.test.key.pem"
 sudo cp "$CERT_FILE" /etc/ssl/certs/
 sudo c_rehash
 
-http GET https://traefik.warden.test
-http GET https://portainer.warden.test
-http GET https://dnsmasq.warden.test
-http GET https://webmail.warden.test
+http --verify=no GET https://traefik.warden.test
+http --verify=no GET https://portainer.warden.test
+http --verify=no GET https://dnsmasq.warden.test
+http --verify=no GET https://webmail.warden.test
 
 mkdir packt1
 cd packt1
@@ -50,5 +50,4 @@ composer create-project --repository-url=https://repo.magento.com/ \
   && rm -rf /tmp/exampleproject/
 
 warden env up
-
 false && warden env down -v
