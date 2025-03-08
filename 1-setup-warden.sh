@@ -43,15 +43,16 @@ false && warden env down -v
 
 warden shell
 
+# https://commercemarketplace.adobe.com/customer/accessKeys/
 composer global config http-basic.repo.magento.com <username> <password>
+# ~/auth.json << { "http-basic": {"repo.magento.com": {"username": "", "password": ""}}}
 
-META_PACKAGE=magento/project-community-edition META_VERSION=2.4.x
-
+META_PACKAGE=magento/project-community-edition META_VERSION=2.4.7-p4
 composer create-project --repository-url=https://repo.magento.com/ \
     "${META_PACKAGE}" /tmp/exampleproject "${META_VERSION}"
 
-rsync -a /tmp/exampleproject/ /var/www/html/
-rm -rf /tmp/exampleproject/
+rsync -a /tmp/exampleproject/ ./ \
+  && rm -rf /tmp/exampleproject/
 
  ## Install Application
  bin/magento setup:install \
