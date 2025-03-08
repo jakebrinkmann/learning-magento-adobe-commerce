@@ -74,6 +74,10 @@ bin/magento cache:disable block_html full_page
 bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
 bin/magento module:disable Magento_TwoFactorAuth
 
+# Add sample data
+bin/magento sampledata:deploy
+bin/magento setup:upgrade
+
 bin/magento indexer:reindex
 bin/magento cache:flush
 
