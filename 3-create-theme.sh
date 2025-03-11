@@ -25,3 +25,8 @@ ls app/design/frontend/packt/theme1/web/images/logo.svg || true
 
 # Configure for Default (aka Global) scope (Not website, store, or view Scope)
 # /backend/theme/design_config/ | Content > Design > Configuration
+#   Applied Theme: <Packt1 Theme>
+
+mkdir -p app/design/frontend/packt/theme1/web/images/
+wget -O app/design/frontend/packt/theme1/web/images/logo.svg \
+  https://openclipart.org/image/800px/232064

@@ -50,5 +50,15 @@ module.exports = {
             'css/styles'
         ],
         dsl: 'less'
-    }
+    },
+	packt1: {
+		area: 'frontend',
+		name: 'packt/theme1',
+		locale: 'en_US',
+		files: [
+			'css/styles-m',
+			'css/styles-l'
+		],
+		dsl: 'less'
+	}
 };
